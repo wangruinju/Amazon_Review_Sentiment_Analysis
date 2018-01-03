@@ -9,21 +9,6 @@ Flask Webapp Using Machine Learning
 
 We cover the setiment analysis of 12 catergories of Amazon prodcuts. We list our results in test datasets using [xxxx model]().
 
-| Category | Accuracy (%) |
-|----------------------------|--------------|
-| Automotive | 88.94 |
-| Baby | 90.13 |
-| Clothing shoes and Jewelry | 90.58 |
-| Digital music | 88.40 |
-| Electronics | 91.62 |
-| Grocery and Gourmet | 90.19 |
-| Home and Kitchen | 92.03 |
-| Kindle store | 92.67 |
-| Pet supplies | 89.20 |
-| Sports and Outdoors | 91.18 |
-| Toys and Games | 91.09 |
-| Video games | 88.74 |
-
 | Category                   | Accuracy (%) |
 |----------------------------|--------------|
 | Automotive                 | 88.94        |
@@ -67,3 +52,25 @@ where
 * summary - summary of the review
 * unixReviewTime - time of the review (unix time)
 * reviewTime - time of the review (raw)
+
+Julian McAuley provides the codes to read the data into a pandas data frame:
+
+```python
+import pandas as pd
+import gzip
+
+def parse(path):
+  g = gzip.open(path, 'rb')
+  for l in g:
+    yield eval(l)
+
+def getDF(path):
+  i = 0
+  df = {}
+  for d in parse(path):
+    df[i] = d
+    i += 1
+  return pd.DataFrame.from_dict(df, orient='index')
+
+df = getDF('reviews_Video_Games.json.gz')
+```
