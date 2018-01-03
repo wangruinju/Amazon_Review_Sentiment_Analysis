@@ -53,7 +53,7 @@ where
 * unixReviewTime - time of the review (unix time)
 * reviewTime - time of the review (raw)
 
-Julian McAuley provides the codes to read the data into a pandas data frame:
+ Here are the codes to read the data into a pandas data frame as Julian McAuley indicates:
 
 ```python
 import pandas as pd
