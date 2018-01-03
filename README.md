@@ -7,12 +7,22 @@ Flask Webapp Using Machine Learning
 
 [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/links.html) was provided by Julian McAuley, UCSD.
 
-We cover the setiment analysis of 12 catergories of Amazon prodcuts.
+We cover the setiment analysis of 12 catergories of Amazon prodcuts. We list our results in test datasets using [xxxx model]().
 
-|--------------|---------------------|----------------------------|---------------|
-| Automotive   | Baby                | Clothing shoes and Jewelry | Digital music |
-| Electronics  | Grocery and Gourmet | Home and Kitchen           | Kindle store  |
-| Pet supplies | Sports and Outdoors | Toys and Games             | Video games   |
+| Category                   | Accuracy (%) |
+|----------------------------|--------------|
+| Automotive                 | 88.94        |
+| Baby                       | 90.13        |
+| Clothing shoes and Jewelry | 90.58        |
+| Digital music              | 88.40        |
+| Electronics                | 91.62        |
+| Grocery and Gourmet        | 90.19        |
+| Home and Kitchen           | 92.03        |
+| Kindle store               | 92.67        |
+| Pet supplies               | 89.20        |
+| Sports and Outdoors        | 91.18        |
+| Toys and Games             | 91.09        |
+| Video games                | 88.74        |
 
 Format is one-review-per-line in (loose) json. See examples below for further help reading the data.
 
