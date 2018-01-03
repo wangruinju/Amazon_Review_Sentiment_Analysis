@@ -10,7 +10,6 @@ Flask Webapp Using Machine Learning
 We cover the setiment analysis of 12 catergories of Amazon prodcuts.
 
 | Automotive   | Baby                | Clothing shoes and Jewelry | Digital music |
-|--------------|---------------------|----------------------------|---------------|
 | Electronics  | Grocery and Gourmet | Home and Kitchen           | Kindle store  |
 | Pet supplies | Sports and Outdoors | Toys and Games             | Video games   |
 
