@@ -10,8 +10,8 @@ python run.py
 
 # Positive/Negative Examples
 
-<img src="https://github.com/wangruinju/Amazon_Review_Sentiment_Analysis/tree/master/test/app/static/images/pos.png" width="300"/>
+<img src="/test/app/static/images/pos.png?raw=true">
 
-<img src="https://github.com/wangruinju/Amazon_Review_Sentiment_Analysis/tree/master/test/app/static/images/neg.png" width="300"/>
+<img src="/test/app/static/images/neg.png?raw=true">
 
 
