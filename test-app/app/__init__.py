@@ -25,9 +25,6 @@ vec = joblib.load('models/review_vector.pkl')
 target_names = ['Negative', 'Positive']
 r = sparse.load_npz('models/review_r.npz')
 
-
-
-
 from .views import *   # flake8: noqa
 
 # Handle Bad Requests

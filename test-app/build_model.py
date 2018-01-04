@@ -35,18 +35,15 @@ if __name__ == "__main__":
     df = getDF('reviews_Digital_Music_5.json.gz')
     df['reviewText'].fillna("unknown", inplace=True)
 
-    X = df.drop(['overall'], axis = 1)
-    y = (df['overall'] > 3).astype(float)
-    texts = list(X['reviewText'])
     treated_text = []
-    for text in texts:
-        treated_text.append(re.compile(f'([{string.punctuation}“”¨«»®´·º½¾¿¡§£₤‘’])').sub(r' \1 ', text))
+    for index, row in df.iterrows():
+        treated_text.append(re.compile(f'([{string.punctuation}“”¨«»®´·º½¾¿¡§£₤‘’])').sub(r' \1 ', row['reviewText']))
     
     vec = TfidfVectorizer(ngram_range=(1,2),
             min_df=3, max_df=0.9, strip_accents='unicode', use_idf=1,
             smooth_idf=1, sublinear_tf=1 )
     x = vec.fit_transform(treated_text)
-    y = y.values
+    y = (df['overall'] > 3).astype(float).values
     r = sparse.csr_matrix(np.log(pr(x,1,y) / pr(x,0,y)))
     clf = LogisticRegression(C = 10, dual=True, penalty = "l2", n_jobs = -1)
     x_nb = x.multiply(r)
