@@ -8,10 +8,10 @@ python build_model.py
 python run.py
 ```
 
-* Positive Example
+# Positive/Negative Examples
 
-![Positive Review](https://github.com/wangruinju/Amazon_Review_Sentiment_Analysis/tree/master/test/app/static/images/pos.png?raw=true)
+<img src="https://github.com/wangruinju/Amazon_Review_Sentiment_Analysis/tree/master/test/app/static/images/pos.png" width="300"/>
 
-* Negative Example
+<img src="https://github.com/wangruinju/Amazon_Review_Sentiment_Analysis/tree/master/test/app/static/images/neg.png" width="300"/>
 
-![Negative Review](https://github.com/wangruinju/Amazon_Review_Sentiment_Analysis/tree/master/test/app/static/images/neg.png?raw=true)
+
