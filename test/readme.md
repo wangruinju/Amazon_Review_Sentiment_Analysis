@@ -10,8 +10,8 @@ python run.py
 
 # Positive/Negative Examples
 
-<img src="/test/app/static/images/pos.png?" width = 300px>
+<img src="/test/app/static/images/pos.png?" width = 350px>
 
-<img src="/test/app/static/images/neg.png?raw=true">
+<img src="/test/app/static/images/neg.png?" width = 350px>
 
 
