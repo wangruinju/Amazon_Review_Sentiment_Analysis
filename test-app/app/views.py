@@ -1,7 +1,8 @@
 import logging
 import json
 import numpy as np
-
+import re
+import string
 from flask import render_template
 from flask_wtf import Form
 from wtforms import fields
@@ -29,12 +30,15 @@ def index():
         submitted_data = form.data
 
         # Retrieve values from form
-        review = vec.transform(np.array(submitted_data['review']))
+        review = re.compile(f'([{string.punctuation}“”¨«»®´·º½¾¿¡§£₤‘’])').sub(r' \1 ', submitted_data['review'])
+        review = vec.transform([review])
         my_prediction = estimator.predict(review.multiply(r))
         
         # Return only the Predicted iris species
         predicted = target_names[int(my_prediction)]
-        my_proba = str(round(estimator.predict_proba(review)[my_prediction]*100, 2))
+        #my_proba = list(estimator.predict_proba(review))
+        #my_proba = str(round(my_proba[int(my_prediction)]*100,2))
+        #my_proba = str(round(estimator.predict_proba(review)[my_prediction]*100, 2))
         
     return render_template('index.html',
         form=form,

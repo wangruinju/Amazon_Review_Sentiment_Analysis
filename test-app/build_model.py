@@ -27,9 +27,6 @@ if __name__ == "__main__":
             df[i] = d
             i += 1
         return pd.DataFrame.from_dict(df, orient='index')
-    
-    def tokenize(s): 
-        return re.compile(f'([{string.punctuation}“”¨«»®´·º½¾¿¡§£₤‘’])').sub(r' \1 ', s).split()
 
     def pr(x, y_i, y):
         p = x[y==y_i].sum(0)
@@ -40,10 +37,15 @@ if __name__ == "__main__":
 
     X = df.drop(['overall'], axis = 1)
     y = (df['overall'] > 3).astype(float)
-    vec = TfidfVectorizer(ngram_range=(1,2), tokenizer=tokenize,
+    texts = list(X['reviewText'])
+    treated_text = []
+    for text in texts:
+        treated_text.append(re.compile(f'([{string.punctuation}“”¨«»®´·º½¾¿¡§£₤‘’])').sub(r' \1 ', text))
+    
+    vec = TfidfVectorizer(ngram_range=(1,2),
             min_df=3, max_df=0.9, strip_accents='unicode', use_idf=1,
             smooth_idf=1, sublinear_tf=1 )
-    x = vec.fit_transform(X['reviewText'])
+    x = vec.fit_transform(treated_text)
     y = y.values
     r = sparse.csr_matrix(np.log(pr(x,1,y) / pr(x,0,y)))
     clf = LogisticRegression(C = 10, dual=True, penalty = "l2", n_jobs = -1)
