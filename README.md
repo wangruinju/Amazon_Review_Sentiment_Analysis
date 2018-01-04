@@ -1,9 +1,10 @@
+# Amazon Review Sentiment Analysis Web Application
 
 Rui Wang and Xiaojuan Tian, 2017-2018
 
-Flask Webapp Using Machine Learning
+Flask web app that uses API service to predict whether the product review is positive or negative.
 
-# Amazon Review Sentiment Analysis
+# Dataset
 
 [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/links.html) was provided by Julian McAuley, UCSD.
 
@@ -23,6 +24,26 @@ We cover the setiment analysis of 12 catergories of Amazon prodcuts. We list our
 | Sports and Outdoors        | 91.19        |
 | Toys and Games             | 91.24        |
 | Video games                | 88.93        |
+
+# Setup Environment on Local Machine
+
+# Installation
+
+To install the Python packages for the course, clone the repository and run:
+
+`conda env create -f environment.yml`
+
+from inside the cloned directory. This assumes that [Anaconda Python](https://www.continuum.io/downloads) is installed.
+
+```
+# Build the model 
+python build_model.py
+
+# Run the App
+python run.py
+``` 
+
+# Data ETL
 
 Format is one-review-per-line in (loose) json. See examples below for further help reading the data.
 
