@@ -8,6 +8,10 @@ python build_model.py
 python run.py
 ```
 
+# Test App
+
+Open Browser: http://localhost:5000
+
 # Positive/Negative Examples
 
 <img src="/test/app/static/images/pos.png?" width = 350px>
