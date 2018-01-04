@@ -1,5 +1,5 @@
 
-Rui Wang, 2017-2018
+Rui Wang and Xiaojuan Tian, 2017-2018
 
 Flask Webapp Using Machine Learning
 
@@ -11,18 +11,18 @@ We cover the setiment analysis of 12 catergories of Amazon prodcuts. We list our
 
 | Category                   | Accuracy (%) |
 |----------------------------|--------------|
-| Automotive                 | 88.94        |
-| Baby                       | 90.13        |
-| Clothing shoes and Jewelry | 90.58        |
-| Digital music              | 88.40        |
-| Electronics                | 91.62        |
-| Grocery and Gourmet        | 90.19        |
-| Home and Kitchen           | 92.03        |
-| Kindle store               | 92.67        |
-| Pet supplies               | 89.20        |
-| Sports and Outdoors        | 91.18        |
-| Toys and Games             | 91.09        |
-| Video games                | 88.74        |
+| Automotive                 | 89.29        |
+| Baby                       | 90.28        |
+| Clothing shoes and Jewelry | 90.50        |
+| Digital music              | 88.92        |
+| Electronics                | 91.58        |
+| Grocery and Gourmet        | 90.33        |
+| Home and Kitchen           | 92.05        |
+| Kindle store               | 92.57        |
+| Pet supplies               | 89.32        |
+| Sports and Outdoors        | 91.19        |
+| Toys and Games             | 91.24        |
+| Video games                | 88.93        |
 
 Format is one-review-per-line in (loose) json. See examples below for further help reading the data.
 
