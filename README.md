@@ -45,6 +45,10 @@ python run.py
 
 The [test](https://github.com/wangruinju/Amazon_Review_Sentiment_Analysis/tree/master/test) folder provides an example for Amazon Digital Music.
 
+# Test App
+
+Open Browser: http://localhost:5000
+
 # Data ETL
 
 Format is one-review-per-line in (loose) json. See examples below for further help reading the data.
