@@ -11,7 +11,7 @@
       {{ form.hidden_tag() }}
       <div class="row">
         <div class="column">
-          {{ form.review.label}} {{ form.review() }}
+          {{ form.review.label}} {{ form.review()}}
       </div>
       <div class="row">
         <button type="submit" class="button-primary">Submit</button>
@@ -20,8 +20,7 @@
     {% if prediction %}
       <div class="row">
         <div class="six columns">
-          <h2>This product review is <strong>{{ prediction }}<strong> 
-                           (probability: {{ prob }}%).
+          <h2>This product review is <p style="color:red;">{{ prediction }}</p> (probability: {{ prob }}%).
           </h2>
         </div>
         <div class="six columns">
