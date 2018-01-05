@@ -24,8 +24,8 @@ if __name__ == "__main__":
         i = 0
         df = {}
         for d in parse(path):
-            df[i] = d
-            i += 1
+                df[i] = d
+                i += 1
         return pd.DataFrame.from_dict(df, orient='index')
 
     def pr(x, y_i, y):
