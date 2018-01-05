@@ -33,7 +33,7 @@ if __name__ == "__main__":
         return (p+1) / ((y==y_i).sum()+1)
 
     category_names = ['Automotive', 'Baby', 'Clothing_Shoes_and_Jewelry',
-                      'Digital_Music', 'Electronics', 'Grocery_and_Gourmet',
+                      'Digital_Music', 'Electronics', 'Grocery_and_Gourmet_Food',
                       'Home_and_Kitchen', 'Kindle_Store', 'Pet_Supplies',
                       'Sports_and_Outdoors', 'Toys_and_Games', 'Video_Games']
 
@@ -56,9 +56,9 @@ if __name__ == "__main__":
         x_nb = x.multiply(r)
         clf.fit(x_nb, y)
         # pickle your model for each category
-        model_loc = 'models/' + name + "_model.pkl"
-        vec_loc = 'models/' + name + "_vector.pkl"
-        r_loc = 'models/' + name + "_r.npz"
+        model_loc = 'models/reviews_' + name + "_5.json.gz_model.pkl"
+        vec_loc = 'models/reviews_' + name + "_5.json.gz_vector.pkl"
+        r_loc = 'models/reviews_' + name + "_5.json.gz_r.npz"
         joblib.dump(clf, model_loc)
         joblib.dump(vec, vec_loc)
         sparse.save_npz(r_loc, r)

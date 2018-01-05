@@ -1,29 +1,26 @@
 
 {% extends 'base.html' %}
-
 {% block body %}
   <section class="header">
-    <h2 class="title">Amazon Digital-Music Reviews!</h2>
+    <h2 class="title">Amazon Product Reviews</h2>
   </section>
   <hr />
   <div class="content">
     <form method="POST">
       {{ form.hidden_tag() }}
-      <div class="row">
-        <div class="column">
-          {{ form.review.label}} {{ form.review() }}
-      </div>
+      {{form.category.label}}  {{form.category()}}
+      {{ form.review.label}} {{ form.review(cols='100',rows='100')}}
       <div class="row">
         <button type="submit" class="button-primary">Submit</button>
       </div>
      </form>
     {% if prediction %}
       <div class="row">
-        <div class="six columns">
-          <h2>This product review is <strong>{{ prediction }}<strong> 
-                           (probability: {{ prob }}%).
-          </h2>
-        </div>
+        <img src="{{url_for('static', filename='images/' + prediction + '.jpeg')}}"
+            height="100"
+        /> 
+        <br />
+        The predicted probability is : <p style="color:red;">{{ prob }} %.</p>
         <div class="six columns">
          <!--  Your Chart or any other form of visualizations -->
          <div id="chart"></div>

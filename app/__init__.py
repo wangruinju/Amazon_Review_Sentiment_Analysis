@@ -16,15 +16,6 @@ logging.basicConfig(format=FORMAT)
 app = Flask(__name__)
 app.config.from_object("app.config")
 
-
-#app.add_template_global(tokenize, 'tokenize')
-
-# unpickle my model
-estimator = joblib.load('models/reviews_%s_5.json.gz_model.pkl'%('Automotive'))
-vec = joblib.load('models/reviews_%s_5.json.gz_vector.pkl'%('Automotive'))
-target_names = ['Negative', 'Positive']
-r = sparse.load_npz('models/reviews_Automotive_5.json.gz_r.npz')
-
 from .views import *   # flake8: noqa
 
 # Handle Bad Requests

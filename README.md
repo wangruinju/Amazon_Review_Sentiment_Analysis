@@ -29,7 +29,7 @@ NBSVM was introduced by Sida Wang and Chris Manning in the paper [Baselines and 
 
 # Installation
 
-To install the Python packages for the course, clone the repository and run:
+To install the Python packages for the project, clone the repository and run:
 
 `conda env create -f environment.yml`
 
@@ -43,11 +43,13 @@ python build_model.py
 python run.py
 ``` 
 
-The [test](https://github.com/wangruinju/Amazon_Review_Sentiment_Analysis/tree/master/test) folder provides an example for Amazon Digital Music.
-
 # Test App
 
 Open Browser: http://localhost:5000
+
+Choose the category of your purchased product, fill in your own reviews and you will obtain results like the following:
+
+![Demo](/demo.png)
 
 # Data ETL
 
