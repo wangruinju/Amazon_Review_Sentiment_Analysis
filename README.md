@@ -47,9 +47,9 @@ python run.py
 
 Open Browser: http://localhost:5000
 
-Choose the category of your purchased product, fill in your own reviews and you will obtain results like the following:
+Choose the category of your purchased product, fill in your own reviews and get results like the following:
 
-![Demo](/demo.png)
+![Demo](/demo.png = 500x)
 
 # Data ETL
 
