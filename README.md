@@ -16,13 +16,13 @@ NBSVM was introduced by Sida Wang and Chris Manning in the paper [Baselines and 
 |----------------------------|--------------|
 | Automotive                 | 89.29        |
 | Baby                       | 90.28        |
-| Clothing shoes and Jewelry | 90.50        |
-| Digital music              | 88.92        |
+| Clothing Shoes and Jewelry | 90.50        |
+| Digital Music              | 88.92        |
 | Electronics                | 91.58        |
-| Grocery and Gourmet        | 90.33        |
+| Grocery and Gourmet Food   | 90.33        |
 | Home and Kitchen           | 92.05        |
-| Kindle store               | 92.57        |
-| Pet supplies               | 89.32        |
+| Kindle Store               | 92.57        |
+| Pet Supplies               | 89.32        |
 | Sports and Outdoors        | 91.19        |
 | Toys and Games             | 91.24        |
 | Video games                | 88.93        |
