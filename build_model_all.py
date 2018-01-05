@@ -32,10 +32,18 @@ if __name__ == "__main__":
         p = x[y==y_i].sum(0)
         return (p+1) / ((y==y_i).sum()+1)
 
-    filenames = [
+    filenames = ['reviews_Kindle_Store_5.json.gz',
+             'reviews_Grocery_and_Gourmet_Food_5.json.gz',
              'reviews_Automotive_5.json.gz',
-'reviews_Digital_Music_5.json.gz',
-'reviews_Pet_Supplies_5.json.gz'
+             'reviews_Digital_Music_5.json.gz',
+             'reviews_Pet_Supplies_5.json.gz',
+             'reviews_Baby_5.json.gz',
+             'reviews_Sports_and_Outdoors_5.json.gz',
+             'reviews_Clothing_Shoes_and_Jewelry_5.json.gz',
+             'reviews_Toys_and_Games_5.json.gz',
+             'reviews_Home_and_Kitchen_5.json.gz',
+             'reviews_Video_Games_5.json.gz',
+             'reviews_Electronics_5.json.gz'
             ]
     for name in filenames:
         df = getDF(name)
