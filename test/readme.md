@@ -14,9 +14,9 @@ Open Browser: http://localhost:5000
 
 # Positive Example
 
-<img src="/test/app/static/images/pos.png?" width = 350px>
+<img src="/test/app/static/images/pos.png" width = 350px>
 
 # Negative Example
-<img src="/test/app/static/images/neg.png?" width = 350px>
+<img src="/test/app/static/images/neg.png" width = 350px>
 
 
