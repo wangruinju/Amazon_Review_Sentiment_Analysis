@@ -20,10 +20,19 @@ app.config.from_object("app.config")
 #app.add_template_global(tokenize, 'tokenize')
 
 # unpickle my model
-estimator = joblib.load('models/review_model.pkl')
-vec = joblib.load('models/review_vector.pkl')
+automotive_estimator = joblib.load('models/Automotive_model.pkl')
+automotive_vec = joblib.load('models/Automotive_vector.pkl')
 target_names = ['Negative', 'Positive']
-r = sparse.load_npz('models/review_r.npz')
+automotive_r = sparse.load_npz('models/Automotive_r.npz')
+
+music_estimator = joblib.load('models/Music_model.pkl')
+music_vec = joblib.load('models/Music_vector.pkl')
+music_r = sparse.load_npz('models/Music_r.npz')
+
+pet_estimator = joblib.load('models/Pet_model.pkl')
+pet_vec = joblib.load('models/Pet_vector.pkl')
+pet_r = sparse.load_npz('models/Pet_r.npz')
+
 
 from .views import *   # flake8: noqa
 
