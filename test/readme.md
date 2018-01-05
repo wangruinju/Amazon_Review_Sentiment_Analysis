@@ -12,10 +12,11 @@ python run.py
 
 Open Browser: http://localhost:5000
 
-# Positive/Negative Examples
+# Positive Examples
 
 <img src="/test/app/static/images/pos.png?" width = 350px>
 
+# Negative Examples
 <img src="/test/app/static/images/neg.png?" width = 350px>
 
 
