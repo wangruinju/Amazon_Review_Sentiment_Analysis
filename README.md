@@ -8,7 +8,7 @@ Flask web app that uses API service to predict whether the product review is pos
 
 [Amazon product data](http://jmcauley.ucsd.edu/data/amazon/links.html) was provided by Julian McAuley, UCSD.
 
-We cover the setiment analysis of 12 catergories of Amazon prodcuts. We list our results in test datasets using NBSVM (Naive Bayes - Support Vector Machine) inspired by [a Kaggle kernel]((https://www.kaggle.com/jhoward/nb-svm-strong-linear-baseline-eda-0-052-lb)). 
+We cover the setiment analysis of 12 catergories of Amazon prodcuts. We list our results in test datasets using NBSVM (Naive Bayes - Support Vector Machine) inspired by [a Kaggle kernel](https://www.kaggle.com/jhoward/nb-svm-strong-linear-baseline-eda-0-052-lb). 
 
 NBSVM was introduced by Sida Wang and Chris Manning in the paper [Baselines and Bigrams: Simple, Good Sentiment and Topic Classiﬁcation](https://nlp.stanford.edu/pubs/sidaw12_simple_sentiment.pdf). Here we use sklearn's logistic regression, rather than SVM, although in practice the two are nearly identical (sklearn uses the liblinear library behind the scenes).
 
