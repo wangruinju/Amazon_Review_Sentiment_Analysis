@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 {% block body %}
   <section class="header">
-    <h2 class="title">Amazon Reviews!</h2>
+    <h2 class="title">Amazon Produt Reviews!</h2>
   </section>
   <hr />
   <div class="content">
@@ -18,9 +18,9 @@
       <div class="row">
         <img src="{{url_for('static', filename='images/' + prediction + '.jpeg')}}"
             height="100"
-        />
-        (probability: {{ prob }}%).
-
+        /> 
+        <br />
+        The predicted probability is : <p style="color:red;">{{ prob }}</p>%.
         <div class="six columns">
          <!--  Your Chart or any other form of visualizations -->
          <div id="chart"></div>

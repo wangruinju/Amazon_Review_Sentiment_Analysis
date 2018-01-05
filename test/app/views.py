@@ -16,9 +16,18 @@ logger = logging.getLogger('app')
 
 class PredictForm(Form):
     """Fields for Predict"""
-    category = fields.SelectField('Category', choices=[('pet', 'Pet'),
-                                                       ('automotive', 'Automotive'),
-                                                       ('music', 'Music')])
+    category = fields.SelectField('Category', choices=[ ('Automotive', 'Automotive'),
+                                                        ('Baby', 'Baby'),
+                                                        ('Clothing Shoes and Jewelry', 'Clothing_Shoes_and_Jewelry'),	
+                                                        ('Digital Music', 'Digital_Music'),	
+                                                        ('Electronics', 'Electronics'),	
+                                                        ('Grocery and Gourmet', 'Grocery_and_Gourmet'),	
+                                                        ('Home and Kitchen', 'Home_and_Kitchen'),	
+                                                        ('Kindle store', 'Kindle_Store'), 	
+                                                        ('Pet Supplies', 'Pet_Supplies'),	
+                                                        ('Sports and Outdoors', 'Sports_and_Outdoors'),	
+                                                        ('Toys and Games', 'Toys_and_Games'),	
+                                                        ('Video Games', 'Video_Games') ])
     review = fields.TextAreaField('Review:', validators=[Required()])
 
     submit = fields.SubmitField('Submit')
@@ -27,6 +36,7 @@ class PredictForm(Form):
 def index():
     """Index page"""
     form = PredictForm()
+    target_names = ['Negative', 'Positive']
     predicted = None
     my_proba = None
     proba = None
@@ -35,25 +45,28 @@ def index():
         # store the submitted values
         submitted_data = form.data
         category = submitted_data['category']
+        category_names = ['Automotive', 'Baby', 'Clothing_Shoes_and_Jewelry',
+                      'Digital_Music', 'Electronics', 'Grocery_and_Gourmet',
+                      'Home_and_Kitchen', 'Kindle_Store', 'Pet_Supplies',
+                      'Sports_and_Outdoors', 'Toys_and_Games', 'Video_Games']
 
         # Retrieve values from form
         review = re.compile(f'([{string.punctuation}“”¨«»®´·º½¾¿¡§£₤‘’])').sub(r' \1 ', submitted_data['review'])
+        for name in category_names:
+            if category == name:
+                model_loc = 'models/' + name + "_model.pkl"
+                vec_loc = 'models/' + name + "_vector.pkl"
+                r_loc = 'models/' + name + "_r.npz"
+                # unpickle my model
+                estimator = joblib.load(model_loc)
+                vec = joblib.load(vec_loc)
+                r = sparse.load_npz(r_loc)
+                break
 
-        if category == 'pet':
-            review = pet_vec.transform([review])
-            my_prediction = pet_estimator.predict(review.multiply(pet_r))
-            my_proba = pet_estimator.predict_proba(review.multiply(pet_r))
-
-        if category == 'automotive':
-            review = automotive_vec.transform([review])
-            my_prediction = automotive_estimator.predict(review.multiply(automotive_r))
-            my_proba = automotive_estimator.predict_proba(review.multiply(automotive_r))
-
-        if category == 'music':
-            review = music_vec.transform([review])
-            my_prediction = music_estimator.predict(review.multiply(music_r))
-            my_proba = music_estimator.predict_proba(review.multiply(music_r))
-
+        review = vec.transform([review])
+        my_prediction = estimator.predict(review.multiply(r))
+        my_proba = estimator.predict_proba(review.multiply(r))
+            
         # Return only the Predicted iris species
         predicted = target_names[int(my_prediction)]
         if my_prediction < 0.5:

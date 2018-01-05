@@ -32,13 +32,14 @@ if __name__ == "__main__":
         p = x[y==y_i].sum(0)
         return (p+1) / ((y==y_i).sum()+1)
 
-    filenames = [
-             'reviews_Automotive_5.json.gz',
-'reviews_Digital_Music_5.json.gz',
-'reviews_Pet_Supplies_5.json.gz'
-            ]
-    for name in filenames:
-        df = getDF(name)
+    category_names = ['Automotive', 'Baby', 'Clothing_Shoes_and_Jewelry',
+                      'Digital_Music', 'Electronics', 'Grocery_and_Gourmet',
+                      'Home_and_Kitchen', 'Kindle_Store', 'Pet_Supplies',
+                      'Sports_and_Outdoors', 'Toys_and_Games', 'Video_Games']
+
+    for name in category_names:
+        fileloc = 'reviews_' + name + '_5.json.gz'
+        df = getDF(fileloc)
         df['reviewText'].fillna("unknown", inplace=True)
 
         treated_text = []
@@ -54,10 +55,10 @@ if __name__ == "__main__":
         clf = LogisticRegression(C = 10, dual=True, penalty = "l2", n_jobs = -1)
         x_nb = x.multiply(r)
         clf.fit(x_nb, y)
-        # clf.predict(x_test.multiply(r))
-        model_loc = name + "_model.pkl"
-        vec_loc = name + "_vector.pkl"
-        r_loc = name + "_r.npz"
+        # pickle your model for each category
+        model_loc = 'models/' + name + "_model.pkl"
+        vec_loc = 'models/' + name + "_vector.pkl"
+        r_loc = 'models/' + name + "_r.npz"
         joblib.dump(clf, model_loc)
         joblib.dump(vec, vec_loc)
         sparse.save_npz(r_loc, r)
