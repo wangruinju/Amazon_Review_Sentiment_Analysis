@@ -45,7 +45,7 @@ python run.py
 
 # Test App
 
-Open Browser: http://localhost:5000
+Open Browser: http://localhost:5000.
 
 Choose the category of your purchased product, fill in your own reviews and get results like the following:
 
