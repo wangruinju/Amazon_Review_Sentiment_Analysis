@@ -49,7 +49,7 @@ Open Browser: http://localhost:5000.
 
 Choose the category of your purchased product, fill in your own reviews and get results like the following:
 
-![Demo](/Demo.png | width=400)
+<img src="https://github.com/wangruinju/Amazon_Review_Sentiment_Analysis/blob/master/Demo.png" width="200" />
 
 # Data ETL
 
