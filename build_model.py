@@ -38,7 +38,7 @@ if __name__ == "__main__":
                       'Sports_and_Outdoors', 'Toys_and_Games', 'Video_Games']
 
     for name in category_names:
-        fileloc = 'reviews_' + name + '_5.json.gz'
+        fileloc = 'data/reviews_' + name + '_5.json.gz'
         df = getDF(fileloc)
         df['reviewText'].fillna("unknown", inplace=True)
 
