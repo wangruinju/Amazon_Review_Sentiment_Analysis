@@ -12,7 +12,7 @@ We cover the setiment analysis of 12 catergories of Amazon prodcuts. We list our
 
 NBSVM was introduced by Sida Wang and Chris Manning in the paper [Baselines and Bigrams: Simple, Good Sentiment and Topic Classiﬁcation](https://nlp.stanford.edu/pubs/sidaw12_simple_sentiment.pdf). Here we use sklearn's logistic regression, rather than SVM, although in practice the two are nearly identical (sklearn uses the liblinear library behind the scenes).
 
-| Category                   | Accuracy (%) |
+| Category                   | Precision (%) |
 |----------------------------|--------------|
 | Automotive                 | 89.29        |
 | Baby                       | 90.28        |
